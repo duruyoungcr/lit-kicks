@@ -20,14 +20,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 else {
-    $sql = "INSERT INTO subscribers (email) VALUES ('$email')";
-
-    if($conn->query($sql) === true){
-         echo "Submission successful";
-    } else{
-        echo "ERROR: Could not execute $sql. " . $mysqli->error;
-    }
-
+    $stmt = $conn->prepare("insert into subscribers(email) values(?)");
+		$stmt->bind_param("s", $email);
+		$execval = $stmt->execute();
+		echo "Registration successfully...";
+		$stmt->close();
     // Close the connection
     $conn->close();
 }
