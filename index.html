@@ -1,7 +1,10 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="theme-color" content="#f5b9a1" />
+    <meta name="msapplication-navbutton-color" content="#f5b9a1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#f5b9a1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- custom css -->
     <link rel="stylesheet" href="./css/style.css" />
@@ -10,11 +13,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- link favicon in browser tab -->
+    <link rel="icon" href="./images/ico.png" type="image/x-icon" />
     <title>LitKicks - Home</title>
   </head>
   <body>
     <!-- LOADER -->
-    <div id="loadPage" class="">
+    <div id="loadPage">
       <div class="my-auto">
         <div class="loader">
           <div class="loader-inner">
@@ -101,14 +108,14 @@
     <main>
       <!-- header -->
       <header>
-        <nav class="">
+        <nav>
           <div class="logo"><a href="#">litkicks</a></div>
         </nav>
       </header>
       <!-- end of header -->
       <!-- hero -->
       <section class="hero">
-        <div class="hero-text">
+        <div class="hero-text" data-aos="fade-up">
           <h1 class="heading">
             Match your kicks with your outfit.
             <span class="text-main"> Everytime</span>
@@ -122,27 +129,18 @@
             the color to your shoes in-app and your kicks print out the color
             that allows you to stand out and shine.
           </p>
-          <form action="./index.php" method="post">
-            <input type="email" name="email" id="email" placeholder="ENTER EMAIL ADDRESS">
-            <button class="btn hero-btn" >get early access </button>
+          <form action="form.php" class="top-form">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="ENTER EMAIL ADDRESS"
+            />
+            <button class="btn hero-btn">get early access</button>
           </form>
         </div>
-        <div class="hero-image">
-          <img
-            class="hero-img"
-            src="./images/shoe-4.png"
-            alt="air-jordan sneakers"
-          />
-          <img
-            class="hero-img"
-            src="./images/shoe-2.png"
-            alt="air-jordan sneakers"
-          />
-          <img
-            class="hero-img"
-            src="./images/shoe-3.png"
-            alt="air-jordan sneakers"
-          />
+        <div class="hero-image" data-aos="fade-down">
+          <img src="./images/pngtree.png" alt="shoe" />
         </div>
       </section>
       <!-- end of hero -->
@@ -150,10 +148,15 @@
       <!-- design -->
       <section class="design">
         <div class="design-image">
-          <img class="design-img" src="./images/unsplash.jpg" alt="shoes" />
+          <img
+            class="design-img"
+            src="./images/shoe-shelf.jpg"
+            alt="shoes"
+            data-aos="zoom-in"
+          />
         </div>
         <div class="design-text">
-          <h1 class="heading">
+          <h1 class="heading" data-aos="zoom-out">
             Designed for <span class="text-main">today</span>
           </h1>
           <p class="paragraph">
@@ -164,7 +167,7 @@
             Our process integrates technology, art and environmentalism in a
             product that speaks about your uniqueness.
           </p>
-          <div class="design-details">
+          <div class="design-details" data-aos="zoom-out">
             <div class="design-detail">
               <h4 class="sub-heading">Any color</h4>
               <p class="paragraph">
@@ -197,109 +200,285 @@
         </div>
       </section>
       <!-- end of design -->
+      <!-- featured -->
+      <section class="featured">
+        <div class="feat-image">
+          <img src="./images/1.png" alt="" data-aos="zoom-in" />
+        </div>
+        <div class="feat-text">
+          <h1 class="heading" data-aos="zoom-out">
+            Creative control within your <span class="text-main">palms</span>
+          </h1>
+          <p class="paragraph">
+            We trust your creative instinct.
+          </p>
+          <p class="paragraph">
+            We have developed a Litkicks companion app that helps you generate
+            the color pallettes and patterns you want to illuminate on your
+            shoes.
+          </p>
+          <h4 class="sub-heading">All in one place</h4>
+          <p class="paragraph">
+            See everything sbout your kicks in one place.
+          </p>
+          <p class="paragraph">
+            Here you can keep track of vitals such as power efficiency,
+            connectivity, kicks version as well as fitness statistics that are
+            exportable with Fitbit and Nike Run.
+          </p>
+          <div class="brands">
+            <img
+              src="./images/fitbit.svg"
+              alt="fitbit logo"
+              data-aos="zoom-in"
+            />
+            <img
+              src="./images/Logo_NIKE.svg"
+              alt="nike logo"
+              data-aos="zoom-in"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- end of featured -->
       <!-- app preview -->
       <section class="app-preview">
-        <h1 class="heading">
-          Control within your <span class="text-main">palms</span>
-        </h1>
-        <p class="paragraph">We trust your creative instinct. The companion app helps you generate the colors and patterns you want to print on your shoes</p>
         <div class="previews">
           <div class="preview">
-            <div class="preview-image">
-              <img src="./images/Rectangle (1).svg" alt="litkicks app preview" data-image="./images/Rectangle (1).svg" data-text="color generation screen">
+            <h1 class="heading" data-aos="zoom-out">01</h1>
+            <div class="preview-image pm">
+              <img
+                src="./images/01.png"
+                alt="litkicks app preview"
+                data-image="./images/01.png"
+                data-text="color generation screen"
+                data-aos="zoom-in"
+              />
             </div>
             <div class="preview-text">
-              <h4 class="sub-heading">ColorGen</h4>
-              <p class="paragraph">Generate complementary colors that suit your outfit. Our mixed reality engine learns and adapts to your preferences</p>
+              <h4 class="sub-heading" data-aos="zoom-out">
+                Snap your outfit
+              </h4>
+              <p class="paragraph">
+                Snap your outfit. Alternatively, select Gallery to pick out a
+                picture of your choice from your storage.
+              </p>
+              <p class="paragraph">
+                Our ColorGen algorithm will generate a complementary color
+                palette based on the dominant colors captured in your picture.
+              </p>
             </div>
           </div>
           <div class="preview">
-            <div class="preview-image">
-              <img src="./images/Rectangle (2).svg" alt="litkicks app preview" data-image="./images/Rectangle (2).svg" data-text="welcome screen">
+            <h1 class="heading" data-aos="zoom-out">02</h1>
+            <div class="preview-image pm">
+              <img
+                src="./images/02.png"
+                alt="litkicks app preview"
+                data-image="./images/02.png"
+                data-text="welcome screen"
+                data-aos="zoom-in"
+              />
             </div>
             <div class="preview-text">
-              <h4 class="sub-heading">Kick Status</h4>
-              <p class="paragraph"> Have a quick glance and manage your kicks vitals which include energy efficiency, distance covered (fitness goals!) and insurance cover</p>
+              <h4 class="sub-heading" data-aos="zoom-out">Adjust your light</h4>
+              <p class="paragraph">
+                Have a look at the the colors generated from the picture
+                uploaded and adjust them to your liking.
+              </p>
+              <p class="paragraph">
+                You can also select color palettes from your previous designs
+                and community creators and members.
+              </p>
             </div>
           </div>
           <div class="preview">
-            <div class="preview-image">
-              <img src="./images/Rectangle.svg" alt="litkicks app preview" data-image="./images/Rectangle.svg" data-text='successful completion screen'>
+            <h1 class="heading" data-aos="zoom-out">03</h1>
+            <div class="preview-image pm">
+              <img
+                src="./images/03.png"
+                alt="litkicks app preview"
+                data-image="./images/03.png"
+                data-text="successful completion screen"
+                data-aos="zoom-in"
+              />
             </div>
             <div class="preview-text">
-              <h4 class="sub-heading">LitSquad</h4>
-              <p class="paragraph">Meet and collaborate with creators and fellow LitKicks owners to share patterns and color combinations in a private community</p>
+              <h4 class="sub-heading" data-aos="zoom-out">Grace the streets</h4>
+              <p class="paragraph">
+                Your connected LitKicks will creatively illuminate with the
+                color combination that you selected.
+              </p>
+              <p class="paragraph">
+                Go ahead and share your creativity and style with the rest of
+                the world!
+              </p>
             </div>
           </div>
         </div>
-        <div class="modal">
-          <div class="modal-box">
-            <img class="modal-image" src="" alt="litkicks app preview">
-            <p class="paragraph modal-text"></p>
-          </div>
-        </div>
-        <div class="coming-soon">
-            <h1 class="heading">Coming <span class="text-main"> soon</span></h1>
-            <div class="store-links">
-              <img src="./images/Download_on_the_App_Store_Badge 1.svg" alt="Download_on_the_App_Store_Badge">
-              <img src="./images/Google_Play_Store_badge_EN 1.svg" alt=" Google_Play_Store_badge_EN">
-            </div>
-          </div>
       </section>
-      <!-- end of app preview -->
+      <!-- other previews -->
+      <section class="other-previews">
+        <div class="other-preview">
+          <div class="other-image pm">
+            <img
+              src="./images/04.png"
+              alt="litkicks app preview"
+              data-image="./images/04.png"
+              data-text="successful completion screen"
+              data-aos="zoom-in"
+            />
+          </div>
+          <div class="other-text">
+            <h4 class="sub-heading" data-aos="zoom-out">
+              You are the community
+            </h4>
+            <p class="paragraph">
+              You will love the LitKicks as much as you will love the Community
+              behind it.
+            </p>
+            <p class="paragraph">
+              Share your lit color palettes, find nearby LitKicks and share your
+              passion for creative and stylish footwear.
+            </p>
+          </div>
+        </div>
+        <div class="other-preview">
+          <div class="other-image pm">
+            <img
+              src="./images/05.png"
+              alt="litkicks app preview"
+              data-image="./images/05.png"
+              data-text="successful completion screen"
+              data-aos="zoom-in"
+            />
+          </div>
+          <div class="other-text">
+            <h4 class="sub-heading" data-aos="zoom-out">
+              Create the next LitPair
+            </h4>
+            <p class="paragraph">
+              We trust your creative instinct and how you wear it with passion.
+            </p>
+            <p class="paragraph">
+              We are entrusting the creation of the next LitPair in our
+              collaboration over product usage and insight.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- end of other previews -->
+      <!-- modal -->
+      <div class="modal">
+        <div class="modal-box">
+          <img class="modal-image" src="" alt="litkicks app preview" />
+        </div>
+      </div>
+      <!-- modal -->
+      <!-- coming soon -->
+      <section class="coming-soon">
+        <h4 class="sub-heading" data-aos="zoom-out">
+          Coming <span class="text-main"> soon</span>
+        </h4>
+        <div class="store-links" data-aos="zoom-in">
+          <img
+            src="./images/Download_on_the_App_Store_Badge 1.svg"
+            alt="Download_on_the_App_Store_Badge"
+          />
+          <img
+            src="./images/Google_Play_Store_badge_EN 1.svg"
+            alt=" Google_Play_Store_badge_EN"
+          />
+        </div>
+      </section>
+      <!-- end coming soon -->
+      <!-- end app preview -->
+      <!-- red -->
+      <div class="red">
+        <div class="red-image">
+          <img
+            src="./images/IMG_20200716_212306_589.png"
+            alt="leg putting on white canvas"
+            data-aos="zoom-in"
+          />
+        </div>
+        <div class="red-text">
+          <h1 class="heading" data-aos="zoom-in">Here’s a blank canvas.</h1>
+          <p class="paragraph">Let us see what you can do.</p>
+        </div>
+      </div>
+      <!-- red -->
       <!-- subscribe -->
       <section class="subscribe">
-        <h1 class="heading">
-          Want to stay in the  <span class="text-main">loop?</span>
+        <h1 class="heading" data-aos="zoom-out">
+          Want to stay in the <span class="text-main">loop?</span>
         </h1>
-        <p class="paragraph">
-           Book for your first pair of LitKicks and learn about the progress we’re making in getting these to your feet straight from us. We promise not to spam you.
+        <p class="paragraph" data-aos="zoom-in">
+          Book for your first pair of LitKicks and learn about the progress
+          we’re making in getting these to your feet straight from us. We
+          promise not to spam you.
         </p>
-        <form action="./index.php" method="post">
-            <input type="email" name="email" id="email" placeholder="ENTER EMAIL ADDRESS">
-            <button class="btn sub-btn" >get early access </button>
+        <form action="form.php" class="bottom-form">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="ENTER EMAIL ADDRESS"
+          />
+          <button class="btn sub-btn">get early access</button>
         </form>
       </section>
       <!-- end of subscribe -->
-    </main>
 
-    <!-- footer -->
-    <section class="footer-section">
-      <div class="line"></div>
-      <footer class="footer">
-        <div class="logo">litkicks</div>
-        <div class="footer-socials">
-          <div class="footer-social">
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              ><i class="fa fa-instagram"></i
-            ></a>
+      <!-- footer -->
+      <section class="footer-section">
+        <div class="line"></div>
+        <footer class="footer">
+          <div
+            class="logo"
+            data-aos="fade-left"
+            data-aos-anchor-placement="top-bottom"
+          >
+            litkicks
           </div>
-          <div class="footer-social">
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              ><i class="fa fa-pinterest"></i
-            ></a>
+          <div
+            class="footer-socials"
+            data-aos="fade-right"
+            data-aos-anchor-placement="top-bottom"
+          >
+            <div class="footer-social">
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </div>
+            <div class="footer-social">
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                ><i class="fa fa-pinterest"></i
+              ></a>
+            </div>
+            <div class="footer-social">
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                ><i class="fa fa-facebook"></i
+              ></a>
+            </div>
+            <div class="footer-social">
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                ><i class="fa fa-twitter"></i
+              ></a>
+            </div>
           </div>
-          <div class="footer-social">
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              ><i class="fa fa-facebook"></i
-            ></a>
-          </div>
-          <div class="footer-social">
-            <a href="#" target="_blank" rel="noopener noreferrer"
-              ><i class="fa fa-twitter"></i
-            ></a>
-          </div>
-        </div>
-      </footer>
-    </section>
+        </footer>
+      </section>
+    </main>
     <!-- anime js -->
     <script src="./js/anime.min.js"></script>
-    <!-- gsap cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollTrigger.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/EasePack.min.js"></script>
-    <!-- sweet alert cdn -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- AOS cdn -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- custom js -->
     <script src="./js/main.js"></script>
+    <!-- sweet alert cdn -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>

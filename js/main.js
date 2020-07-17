@@ -9,48 +9,28 @@ anime({
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  const loader = document.querySelector("#loadPage");
-  const body = document.querySelector("body");
   setTimeout(() => {
+    const loader = document.querySelector("#loadPage");
     loader.classList.add("loading-complete");
-    body.style.overflowY = "scroll";
-  }, 4000);
+  }, 3000);
 });
 
-// hero animation
-const tl = new TimelineMax({ delay: 2 });
-const heroImages = document.querySelectorAll(".hero-img");
-tl.from(".logo", 1, { x: -200, opacity: 0 })
-  .from(".hero-text", 1, { opacity: 0, y: 100 }, "-=0.5")
-  .from(
-    ".hero-image",
-    1,
-    {
-      y: -200,
-      opacity: 0,
-    },
-    "-=1"
-  )
-  .to(heroImages[heroImages.length - 1], 1, {
-    opacity: 0,
-    delay: 0.5,
-  })
-  .to(heroImages[1], 1, { opacity: 0, delay: 0.5 });
+// AOS
+AOS.init({
+  duration: 1000,
+});
 
 // modal
-const previewImages = document.querySelectorAll(".preview-image img");
+const previewImages = document.querySelectorAll(".pm img");
 const modal = document.querySelector(".modal");
 const modalImage = document.querySelector(".modal-image");
-const modalText = document.querySelector(".modal-text");
 
 previewImages.forEach((image) => {
   const body = document.querySelector("body");
   image.addEventListener("click", () => {
     modal.classList.add("open");
     const imageSrc = image.dataset.image;
-    const imageCaption = image.dataset.text;
     modalImage.src = imageSrc;
-    modalText.innerHTML = imageCaption;
   });
 });
 
@@ -60,3 +40,72 @@ modal.addEventListener("click", (e) => {
     modal.classList.remove("open");
   }
 });
+
+//email validation
+// const topForm = document.querySelector(".top-form");
+// const bottomForm = document.querySelector(".bottom-form");
+// const topInput = document.querySelector(".top-form input");
+// const bottomInput = document.querySelector(".bottom-form input");
+
+$(function () {
+  $("form").submit(function (e) {
+    //prevent default form submission
+    e.preventDefault();
+
+    //ajax form submission
+    $.ajax({
+      type: "POST",
+      url: "form.php",
+      data: $(this).serialize(),
+      success: (message) => {
+        // add an action to be carried out when submission is successful
+        swal("Success", "Subscription successful", "success");
+      },
+      // add an action to be carried out when submission is successful
+      error: (error) => {
+        swal("Error", "Please enter a valid email", "error");
+      },
+    });
+  });
+});
+
+// topForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   if (topInput.value == "") {
+//     swal("Error", "Email cannot be empty!", "error");
+//   } else {
+//     checkInputs();
+//   }
+// });
+
+// bottomForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   if (bottomInput.value == "") {
+//     swal("Error", "Email cannot be empty!", "error");
+//   } else {
+//     checkInputs();
+//   }
+// });
+
+// function checkInputs() {
+//   const email2 = bottomInput.value.trim();
+//   const email = topInput.value.trim();
+//   if (isEmail(email)) {
+//     swal("Success", "Subscription successful", "success");
+//     topForm.reset();
+//   } else {
+//     swal("Error", "Please enter a valid email", "error");
+//   }
+
+//   if (isEmail(email2)) {
+//     swal("Success", "Subscription successful", "success");
+//     bottomForm.reset();
+//   } else {
+//     swal("Error", "Please enter a valid email", "error");
+//   }
+// }
+
+// function isEmail(email) {
+//   const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+//   return regex.test(email);
+// }
