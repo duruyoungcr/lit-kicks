@@ -59,8 +59,8 @@ $(function () {
         data: $(this).serialize(),
         success: (message) => {
           // add an action to be carried out when submission is successful
-          topForm.reset();
           swal("Success", "Subscription successful", "success");
+          topForm.reset();
         },
         // add an action to be carried out when submission is successful
         error: (error) => {
@@ -72,8 +72,9 @@ $(function () {
     }
   });
 });
+
 $(function () {
-  $(".top-form").submit(function (e) {
+  $(".bottom-form").submit(function (e) {
     //prevent default form submission
     e.preventDefault();
     //ajax form submission
@@ -84,8 +85,8 @@ $(function () {
         data: $(this).serialize(),
         success: (message) => {
           // add an action to be carried out when submission is successful
-          bottomForm.reset();
           swal("Success", "Subscription successful", "success");
+          bottomForm.reset();
         },
         // add an action to be carried out when submission is successful
         error: (error) => {
